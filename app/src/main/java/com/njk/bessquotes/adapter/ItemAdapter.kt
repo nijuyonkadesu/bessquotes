@@ -12,20 +12,21 @@ import com.njk.bessquotes.model.Quote
 class ItemAdapter(private val context: Context, private val dataset: List<Quote>) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() { // extend
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) { // subclass
-        val textView: TextView =
-            view.findViewById(R.id.item_title) // reference to the views within a list item layout
-    }
-// 1 invoked by layout manager
+    // 1 invoked by layout manager
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder { // inflate layout from xml - and pass it to ItemViewHolder -> RecycleView.ViewHolder
-        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_list,parent,false)
+        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_list,parent,false) // LayoutInflater needs to get a handle of the activity [which it gets from 'from()'] | parent -> RecyclerView | context -> MainActivity
         return ItemViewHolder(adapterLayout)
     }
-// 2 invoked by layout manager - replace contents of view
+    // 2 invoked by layout manager - replace contents of view
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
     }
-// 3 invoked by layout manager
+    // 3 invoked by layout manager
     override fun getItemCount() = dataset.size
+
+    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) { // subclass
+        val textView: TextView =
+            view.findViewById(R.id.item_title) // reference to the views within a list item layout + this is caching
+    }
 }
