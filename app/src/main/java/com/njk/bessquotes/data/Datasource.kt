@@ -5,16 +5,16 @@ import com.njk.bessquotes.model.Quote
 class Datasource {
     fun loadQuotes() :List<Quote>{
         return listOf<Quote>(
-            Quote(R.string.q1,),
-            Quote(R.string.q2,),
-            Quote(R.string.q3,),
-            Quote(R.string.q4,),
-            Quote(R.string.q5,),
-            Quote(R.string.q6,),
-            Quote(R.string.q7,),
-            Quote(R.string.q8,),
-            Quote(R.string.q9,),
-            Quote(R.string.q10,)
+            Quote(R.string.q1,R.drawable.image1),
+            Quote(R.string.q2,R.drawable.image2),
+            Quote(R.string.q3,R.drawable.image3),
+            Quote(R.string.q4,R.drawable.image4),
+            Quote(R.string.q5,R.drawable.image5),
+            Quote(R.string.q6,R.drawable.image6),
+            Quote(R.string.q7,R.drawable.image7),
+            Quote(R.string.q8,R.drawable.image8),
+            Quote(R.string.q9,R.drawable.image9),
+            Quote(R.string.q10,R.drawable.image10)
         )
     }
 }
