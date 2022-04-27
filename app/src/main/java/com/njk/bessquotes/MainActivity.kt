@@ -2,6 +2,7 @@ package com.njk.bessquotes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.njk.bessquotes.adapter.ItemAdapter
 import com.njk.bessquotes.data.Datasource
